@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GitHubReader</string>
+    <string name="net_unavailable">Проверьте ваши настройки связи и попробуйте еще раз.</string>
+    <string name="old_token">Ваша сесия прервана, нужно залогиниться заново.</string>
+    <!--login activity-->
+    <string name="login_activity_login_text">Логин</string>
+    <string name="login_activity_password_text">Пароль</string>
+    <string name="login_activity_login_button_text">Логин</string>
+    <string name="login_activity_login_in_process">Загрузка данных, подождите пожалуйста...</string>
+
+
+</resources>

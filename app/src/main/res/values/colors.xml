@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_red">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#dadada</color>
+    <color name="light_gray">#f0f0f0</color>
+
+    <!--background gradient colorss-->
+    <color name="gradient_color_1">#ffffff</color>
+    <color name="gradient_color_2">#bed4dd</color>
+
+    <!--button colors-->
+    <color name="green">#5e8e00</color>
+    <color name="blue">#094f73</color>
+    <color name="dark_blue">#0b273d</color>
+
+    <color name="main_edit_text_stroke_color">#000000</color>
+</resources>
