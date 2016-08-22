@@ -17,6 +17,8 @@ import static com.example.m1.githubreader.Constants.ARG_WRONG_PASS;
  */
 public class LoginActivity extends GitHubReaderActivity{
 
+    final static String LOG_TAG = LoginActivity.class.getSimpleName();
+
     private EditText mEdtLogin;
     private EditText mEdtPassword;
     private TextView mTxtWrongPassword;
