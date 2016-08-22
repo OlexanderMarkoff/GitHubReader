@@ -8,6 +8,7 @@
     <color name="white">#ffffff</color>
     <color name="gray">#dadada</color>
     <color name="light_gray">#f0f0f0</color>
+    <color name="transparent">#00000000</color>
 
     <!--background gradient colorss-->
     <color name="gradient_color_1">#ffffff</color>

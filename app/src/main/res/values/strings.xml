@@ -8,5 +8,13 @@
     <string name="login_activity_login_button_text">Логин</string>
     <string name="login_activity_login_in_process">Загрузка данных, подождите пожалуйста...</string>
 
+    <!--dialog-->
+    <string name="title_dialog_button_ok">Ok</string>
+    <string name="title_error">Error</string>
+    <string name="title_empty_fields">Поля логин и пароль не могут быть пустыми.</string>
+    <string name="title_unauthorized">Поле логин или пароль введены неправильно.</string>
+    <string name="title_connection_limit">Вы превысили количество подключений, повторите попытку позже.</string>
+    <string name="title_no_inet_connection">Ошибка подключения!\nПроверьте ваше интеренет соединие.</string>
+    <string name="title_request_error">Ошибка подключения!\nНевозможно подключиться к сервису.\nПопробуйте воскурить над устройством благовония или используйте бубен..</string>
 
 </resources>

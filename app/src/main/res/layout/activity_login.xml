@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@drawable/background_gradient"
+              android:background="@drawable/bg_gradient"
               android:orientation="vertical"
               android:padding="@dimen/screen_padding">
 
@@ -12,7 +12,7 @@
         android:layout_marginTop="@dimen/main_offset"
         android:text="@string/login_activity_login_text"
         android:textColor="@color/black"
-        android:textSize="@dimen/main_text_size"/>
+        android:textSize="@dimen/text_size_16"/>
 
     <EditText
         android:id="@+id/edt_login"
@@ -28,7 +28,7 @@
         android:layout_marginTop="@dimen/main_offset"
         android:text="@string/login_activity_password_text"
         android:textColor="@color/black"
-        android:textSize="@dimen/main_text_size"/>
+        android:textSize="@dimen/text_size_16"/>
 
     <EditText
         android:id="@+id/edt_password"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/main_offset"
         android:textColor="@color/color_red"
-        android:textSize="@dimen/main_text_size"/>
+        android:textSize="@dimen/text_size_16"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,7 +60,7 @@
             android:background="@drawable/button_corners_rounded_green"
             android:text="@string/login_activity_login_button_text"
             android:textColor="@drawable/button_text_color"
-            android:textSize="@dimen/main_text_size"/>
+            android:textSize="@dimen/text_size_16"/>
 
     </LinearLayout>
 

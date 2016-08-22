@@ -1,8 +1,10 @@
 package com.example.m1.githubreader.api;
 
+import com.example.m1.githubreader.data.GitHubUser;
+import com.example.m1.githubreader.utils.Base64EncodeDecodeHelper;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -41,32 +43,7 @@ public class APIHelper {
         public int error;
         public String message;
         public int status;
-        public T data;
-    }
-
-    private static <T> Callback<GlobalDataResponse<T>> checkRetrofitResponse(
-            final Callback<GlobalDataResponse<T>> incomingCallback) {
-        return new Callback<GlobalDataResponse<T>>() {
-            @Override
-            public void onResponse(Call<GlobalDataResponse<T>> call, retrofit2.Response<GlobalDataResponse<T>> response) {
-                if (response == null || response.body() == null) {
-                    incomingCallback.onFailure(call, new Throwable("SERVER ERROR"));
-                } else if (response.body().data != null && response.body().error == 0
-                        && response.body().status == 1) {
-                    incomingCallback.onResponse(call, response);
-                    android.util.Log.i("Retrofit", "successful");
-                } else {
-                    incomingCallback.onFailure(call, new Throwable(response.body().message));
-                    android.util.Log.i("Retrofit", "failure");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<GlobalDataResponse<T>> call, Throwable t) {
-                incomingCallback.onFailure(call, t);
-                android.util.Log.i("Retrofit", "failure");
-            }
-        };
+        public T body;
     }
 
     /**
@@ -74,8 +51,9 @@ public class APIHelper {
      * @param password
      */
 
-    public static void authorization(String login, String password, Callback<GlobalDataResponse<Void>> callback) {
-
+    public static void authorization(String login, String password, Callback<GlobalDataResponse<GitHubUser>> callback) {
+        String userPass = "Basic " + Base64EncodeDecodeHelper.encode(login + ":" +password);
+        mRestService.authorization(userPass).enqueue(callback);
     }
 
 }

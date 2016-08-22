@@ -4,15 +4,17 @@
     <dimen name="main_half_half_offset">8dp</dimen>
     <dimen name="main_half_offset">16dp</dimen>
     <dimen name="main_offset">32dp</dimen>
+    <dimen name="average_main_offset">48dp</dimen>
+    <dimen name="big_main_offset">64dp</dimen>
 
     <dimen name="main_edit_text_stroke">3dp</dimen>
-    <dimen name="main_edit_text_padding">20dp</dimen>
-    <dimen name="main_spinner_padding">20dp</dimen>
-    <dimen name="main_text_size">24dp</dimen>
     <dimen name="text_size_12">24sp</dimen>
+    <dimen name="text_size_13">26sp</dimen>
+    <dimen name="text_size_15">30sp</dimen>
+    <dimen name="text_size_16">32dp</dimen>
 
-    <dimen name="main_horizontal_padding">30dp</dimen>
-    <dimen name="main_vertical_padding">20dp</dimen>
+    <dimen name="padding_5">10dp</dimen>
+    <dimen name="padding_10">20dp</dimen>
     <dimen name="main_button_pressed_stroke">5dp</dimen>
     <dimen name="main_button_corner_radius">20dp</dimen>
     <dimen name="margin_between_buttons">20dp</dimen>
@@ -20,4 +22,10 @@
     <dimen name="dialog_marker_info_margin_between_fields">20dp</dimen>
 
     <dimen name="map_activity_buttons_margin">40dp</dimen>
+
+    <dimen name="dialog_white_view_height">90dp</dimen>
+    <dimen name="main_corner_radius">10dp</dimen>
+    <dimen name="dialog_image_size">160dp</dimen>
+    <dimen name="divider_size">2dp</dimen>
+    <dimen name="btn_height">96dp</dimen>
 </resources>

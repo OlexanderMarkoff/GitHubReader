@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/big_main_offset"
+    android:paddingLeft="@dimen/big_main_offset"
+    android:paddingRight="@dimen/big_main_offset"
+    android:paddingStart="@dimen/big_main_offset">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-4dp">
+
+        <View
+            android:id="@+id/v_dialog_top_buffer"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dialog_white_view_height"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_round_corners_top_secondary" />
+
+        <FrameLayout
+            android:id="@+id/frame_icon_container"
+            android:layout_width="@dimen/dialog_image_size"
+            android:layout_height="@dimen/dialog_image_size"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_round_corners_top">
+
+            <ImageView
+                android:id="@+id/img_dialog_warning"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:padding="@dimen/padding_10"
+                android:src="@mipmap/ic_info"
+                tools:ignore="ContentDescription" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/main_offset"
+        android:paddingLeft="@dimen/main_offset"
+        android:paddingRight="@dimen/main_offset"
+        android:paddingStart="@dimen/main_offset">
+
+        <TextView
+            android:id="@+id/txt_dialog_warning_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/main_offset"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_15"
+            android:textStyle="bold"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/txt_dialog_warning_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/average_main_offset"
+            android:textSize="@dimen/text_size_13"
+            tools:text="Content" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_dialog_warning_neutral"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_corners_rounded_dark_blue"
+        android:text="@string/title_dialog_button_ok"
+        android:textColor="@drawable/button_text_color"
+        android:textSize="@dimen/text_size_16"/>
+
+
+</LinearLayout>
