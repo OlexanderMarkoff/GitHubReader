@@ -17,4 +17,10 @@
     <string name="title_no_inet_connection">Ошибка подключения!\nПроверьте ваше интеренет соединие.</string>
     <string name="title_request_error">Ошибка подключения!\nНевозможно подключиться к сервису.\nПопробуйте воскурить над устройством благовония или используйте бубен..</string>
 
+    <!--repos activity-->
+    <string name="title_button_search">Искать</string>
+    <string name="title_my_repos">Мои репозитории</string>
+    <string name="item_title">Название:</string>
+    <string name="item_description">Описание:</string>
+
 </resources>

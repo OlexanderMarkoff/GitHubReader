@@ -8,7 +8,9 @@ public interface Constants {
     //login activity
     String ARG_LOGIN = "arg_login";
     String ARG_PASSWORD = "arg_password";
-    String ARG_WRONG_PASS = "arg_wrong_password";
+
+    //Repos activity
+    String ARG_REPOS_TYPE = "arg_type";
 
     String TITLE_EMPTY = "";
     String BASE_64_PATTERN = "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$";

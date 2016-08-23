@@ -1,6 +1,9 @@
 package com.example.m1.githubreader.api;
 
+import com.example.m1.githubreader.data.GitHubRepo;
 import com.example.m1.githubreader.data.GitHubUser;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,8 +16,11 @@ import retrofit2.http.Headers;
 public interface APIHelperInterface {
 
     @Headers({ "Accept:application/vnd.github.v3+json"})
-//    @POST(CalledMethods.AUTORIZATION)
     @GET("/user")
-    Call<APIHelper.GlobalDataResponse<GitHubUser>>
+    Call<GitHubUser>
     authorization(@Header("Authorization")String authorization);
+
+    @GET("/user/repos")
+    Call<List<GitHubRepo>>
+    getMyRepos(@Header("Authorization")String authorization);
 }

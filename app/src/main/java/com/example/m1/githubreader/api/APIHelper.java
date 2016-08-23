@@ -1,7 +1,10 @@
 package com.example.m1.githubreader.api;
 
+import com.example.m1.githubreader.data.GitHubRepo;
 import com.example.m1.githubreader.data.GitHubUser;
-import com.example.m1.githubreader.utils.Base64EncodeDecodeHelper;
+import com.example.m1.githubreader.utils.UserCredManager;
+
+import java.util.List;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -39,21 +42,12 @@ public class APIHelper {
         mRestService = mRestAdapter.create(APIHelperInterface.class);
     }
 
-    public static class GlobalDataResponse<T> {
-        public int error;
-        public String message;
-        public int status;
-        public T body;
+    public static void authorization( Callback<GitHubUser> callback) {
+        mRestService.authorization(UserCredManager.getInstance().getUserAuthHeader()).enqueue(callback);
     }
 
-    /**
-     * @param login
-     * @param password
-     */
-
-    public static void authorization(String login, String password, Callback<GlobalDataResponse<GitHubUser>> callback) {
-        String userPass = "Basic " + Base64EncodeDecodeHelper.encode(login + ":" +password);
-        mRestService.authorization(userPass).enqueue(callback);
+    public  static  void getMyRepos(Callback<List<GitHubRepo>> callback) {
+        mRestService.getMyRepos(UserCredManager.getInstance().getUserAuthHeader()).enqueue(callback);
     }
 
 }

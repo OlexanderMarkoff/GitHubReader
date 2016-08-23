@@ -2,6 +2,7 @@ package com.example.m1.githubreader.activities;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -18,16 +19,28 @@ import com.example.m1.githubreader.R;
 public abstract class GitHubReaderActivity extends Activity implements View.OnClickListener {
 
     private AlertDialog mInfoDialog;
+    private ProgressDialog mSpinnerDialog;
+    protected boolean mIsDestroyed;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mIsDestroyed = false;
         initUI();
         setUI(savedInstanceState);
+        mSpinnerDialog = new ProgressDialog(this);
+        mSpinnerDialog.setMessage(getString(R.string.login_activity_login_in_process));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mIsDestroyed = true;
     }
 
     protected abstract void initUI();
+
     protected abstract void setUI(Bundle savedInstanceState);
 
     public void showInfoDialog(final int titleRes, final int contentRes) {
@@ -70,5 +83,19 @@ public abstract class GitHubReaderActivity extends Activity implements View.OnCl
             }
         });
         mInfoDialog.show();
+    }
+
+    public void showProgressDialog() {
+        if (mIsDestroyed) return;
+        if (mSpinnerDialog != null && !mSpinnerDialog.isShowing()) {
+            mSpinnerDialog.show();
+        }
+    }
+
+    public void hideProgressDialog() {
+        if (mIsDestroyed) return;
+        if (mSpinnerDialog != null && mSpinnerDialog.isShowing()) {
+            mSpinnerDialog.hide();
+        }
     }
 }
