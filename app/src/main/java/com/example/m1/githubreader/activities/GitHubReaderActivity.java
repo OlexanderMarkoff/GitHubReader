@@ -36,6 +36,7 @@ public abstract class GitHubReaderActivity extends Activity implements View.OnCl
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mSpinnerDialog.hide();
         mIsDestroyed = true;
     }
 
@@ -87,7 +88,10 @@ public abstract class GitHubReaderActivity extends Activity implements View.OnCl
 
     public void showProgressDialog() {
         if (mIsDestroyed) return;
-        if (mSpinnerDialog != null && !mSpinnerDialog.isShowing()) {
+        if (mSpinnerDialog != null) {
+            if (mSpinnerDialog.isShowing()) {
+                hideProgressDialog();
+            }
             mSpinnerDialog.show();
         }
     }

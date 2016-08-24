@@ -11,6 +11,7 @@ public interface Constants {
 
     //Repos activity
     String ARG_REPOS_TYPE = "arg_type";
+    String ARG_SEARCH_STRING = "arg_search";
 
     String TITLE_EMPTY = "";
     String BASE_64_PATTERN = "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$";

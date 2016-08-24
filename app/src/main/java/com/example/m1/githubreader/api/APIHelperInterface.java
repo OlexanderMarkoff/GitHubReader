@@ -9,6 +9,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
+import retrofit2.http.Path;
 
 /**
  * Created by Markov O on 22.08.16.
@@ -23,4 +24,8 @@ public interface APIHelperInterface {
     @GET("/user/repos")
     Call<List<GitHubRepo>>
     getMyRepos(@Header("Authorization")String authorization);
+
+    @GET("/user/{userName}/repos")
+    Call<List<GitHubRepo>>
+    getUserRepos(@Header("Authorization")String authorization, @Path("userName") String userName );
 }

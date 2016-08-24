@@ -50,4 +50,7 @@ public class APIHelper {
         mRestService.getMyRepos(UserCredManager.getInstance().getUserAuthHeader()).enqueue(callback);
     }
 
+    public  static  void getUserRepos(String userName, Callback<List<GitHubRepo>> callback) {
+        mRestService.getUserRepos(UserCredManager.getInstance().getUserAuthHeader(), userName).enqueue(callback);
+    }
 }
