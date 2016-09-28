@@ -1,4 +1,4 @@
-package com.example.m1.githubreader.adapters;
+package com.example.m1.githubreader.view.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.m1.githubreader.R;
-import com.example.m1.githubreader.data.GitHubRepo;
+import com.example.m1.githubreader.model.data.GitHubRepo;
 
 import java.util.List;
 

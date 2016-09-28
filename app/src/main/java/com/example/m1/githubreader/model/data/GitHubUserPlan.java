@@ -1,10 +1,11 @@
-package com.example.m1.githubreader.data;
+package com.example.m1.githubreader.model.data;
 
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by M1 on 22.08.2016.
  */
+@SuppressWarnings("unused")
 public class GitHubUserPlan {
 
     @SerializedName("name")

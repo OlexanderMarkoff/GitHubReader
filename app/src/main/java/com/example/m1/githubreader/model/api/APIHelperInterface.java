@@ -1,7 +1,7 @@
-package com.example.m1.githubreader.api;
+package com.example.m1.githubreader.model.api;
 
-import com.example.m1.githubreader.data.GitHubRepo;
-import com.example.m1.githubreader.data.GitHubUser;
+import com.example.m1.githubreader.model.data.GitHubRepo;
+import com.example.m1.githubreader.model.data.GitHubUser;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public interface APIHelperInterface {
     Call<List<GitHubRepo>>
     getMyRepos(@Header("Authorization")String authorization);
 
-    @GET("/user/{userName}/repos")
+    @GET("/users/{userName}/repos")
     Call<List<GitHubRepo>>
     getUserRepos(@Header("Authorization")String authorization, @Path("userName") String userName );
 }

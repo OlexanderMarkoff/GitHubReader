@@ -1,7 +1,7 @@
-package com.example.m1.githubreader.api;
+package com.example.m1.githubreader.model.api;
 
-import com.example.m1.githubreader.data.GitHubRepo;
-import com.example.m1.githubreader.data.GitHubUser;
+import com.example.m1.githubreader.model.data.GitHubRepo;
+import com.example.m1.githubreader.model.data.GitHubUser;
 import com.example.m1.githubreader.utils.UserCredManager;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.example.m1.githubreader.utils;
 
-import com.example.m1.githubreader.data.GitHubRepo;
+import com.example.m1.githubreader.model.data.GitHubRepo;
 
 import java.util.ArrayList;
 import java.util.List;

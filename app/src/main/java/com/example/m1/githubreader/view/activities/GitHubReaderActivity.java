@@ -1,4 +1,4 @@
-package com.example.m1.githubreader.activities;
+package com.example.m1.githubreader.view.activities;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -12,20 +12,25 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.m1.githubreader.R;
+import com.example.m1.githubreader.presenter.Presenter;
+import com.example.m1.githubreader.view.interfaces.GiHubReaderView;
 
 /**
  * Created by Markov O on 19.08.16.
  */
-public abstract class GitHubReaderActivity extends Activity implements View.OnClickListener {
+public abstract class GitHubReaderActivity<T extends Presenter> extends Activity implements View.OnClickListener, GiHubReaderView {
 
     private AlertDialog mInfoDialog;
     private ProgressDialog mSpinnerDialog;
     protected boolean mIsDestroyed;
 
+    protected T mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mPresenter = getNeededPresenter();
+        mPresenter.subscribe(this);
         mIsDestroyed = false;
         initUI();
         setUI(savedInstanceState);
@@ -40,6 +45,8 @@ public abstract class GitHubReaderActivity extends Activity implements View.OnCl
         mIsDestroyed = true;
     }
 
+    protected abstract T getNeededPresenter();
+
     protected abstract void initUI();
 
     protected abstract void setUI(Bundle savedInstanceState);
@@ -53,7 +60,7 @@ public abstract class GitHubReaderActivity extends Activity implements View.OnCl
             return;
 
         @SuppressLint("InflateParams")
-        final View customView = getLayoutInflater().inflate(R.layout.layout_dialog_warning, null, false);
+        final View customView = getLayoutInflater().inflate(R.layout.dialog_warning, null, false);
         final View warningIcon = customView.findViewById(R.id.img_dialog_warning);
         final TextView txtTitle = (TextView) customView.findViewById(R.id.txt_dialog_warning_title);
         final TextView txtContent = (TextView) customView.findViewById(R.id.txt_dialog_warning_content);
@@ -101,5 +108,10 @@ public abstract class GitHubReaderActivity extends Activity implements View.OnCl
         if (mSpinnerDialog != null && mSpinnerDialog.isShowing()) {
             mSpinnerDialog.hide();
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        mPresenter.onClick(v);
     }
 }
