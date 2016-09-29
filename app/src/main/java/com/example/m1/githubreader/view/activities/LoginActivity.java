@@ -60,6 +60,4 @@ public class LoginActivity extends GitHubReaderActivity<LoginPresenter> implemen
     protected LoginPresenter getNeededPresenter() {
         return (LoginPresenter) BasePresenter.PresenterManager.getPresenter(LoginPresenter.class);
     }
-
-
 }
