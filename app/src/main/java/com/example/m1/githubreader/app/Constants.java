@@ -5,12 +5,7 @@ package com.example.m1.githubreader.app;
  */
 public interface Constants {
 
-    //login activity
-    String ARG_LOGIN = "arg_login";
-    String ARG_PASSWORD = "arg_password";
-
     //Repos activity
-    String ARG_REPOS_TYPE = "arg_type";
     String ARG_SEARCH_STRING = "arg_search";
 
     String TITLE_EMPTY = "";

@@ -13,14 +13,21 @@
     <string name="title_error">Error</string>
     <string name="title_empty_fields">Поля логин и пароль не могут быть пустыми.</string>
     <string name="title_unauthorized">Поле логин или пароль введены неправильно.</string>
-    <string name="title_connection_limit">Вы превысили количество подключений, повторите попытку позже.</string>
-    <string name="title_no_inet_connection">Ошибка подключения!\nПроверьте ваше интеренет соединие.</string>
-    <string name="title_request_error">Ошибка подключения!\nНевозможно подключиться к сервису.\nПопробуйте воскурить над устройством благовония или используйте бубен..</string>
+    <string name="title_connection_limit">Вы превысили количество подключений, повторите попытку
+        позже.
+    </string>
+    <string name="title_no_inet_connection">Ошибка подключения!\nПроверьте ваше интеренет
+        соединие.
+    </string>
+    <string name="title_request_error">Ошибка подключения!\nНевозможно подключиться к
+        сервису.\nПопробуйте воскурить над устройством благовония или используйте бубен..
+    </string>
+    <string name="title_query_field_empty">Поле поиска не может быть пустым</string>
 
     <!--repos activity-->
     <string name="title_button_search">Искать</string>
     <string name="title_my_repos">Мои репозитории</string>
-    <string name="title_user_repos">Репозитории пользователя: </string>
+    <string name="title_user_repos">Репозитории пользователя:</string>
     <string name="item_title">Название:</string>
     <string name="item_description">Описание:</string>
 

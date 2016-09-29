@@ -16,10 +16,6 @@ public abstract class BasePresenter<T extends GiHubReaderView> implements Presen
     protected BasePresenter() {
     }
 
-    public static Presenter getInstance() {
-        throw new RuntimeException("You need to override in children. Children must be singletons.");
-    }
-
     @Override
     public void subscribe(T view) {
         this.view = view;
@@ -53,6 +49,12 @@ public abstract class BasePresenter<T extends GiHubReaderView> implements Presen
         public static void removePresenter(Presenter presenter) {
             PRESENTERS.remove(presenter);
         }
+    }
+
+    @Override
+    public boolean isSubscribed(T view) {
+        return view.equals(this.view);
+
     }
 }
 

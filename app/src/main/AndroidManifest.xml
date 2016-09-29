@@ -20,9 +20,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activities.ReposActivity"
+            android:name=".view.activities.MyReposActivity"
             android:windowSoftInputMode="adjustPan"/>
-
+        <activity
+            android:name=".view.activities.UserRepoActivity"
+            android:windowSoftInputMode="adjustPan"/>
 
     </application>
 

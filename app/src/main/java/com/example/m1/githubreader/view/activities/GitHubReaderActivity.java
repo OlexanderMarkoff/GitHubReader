@@ -29,13 +29,23 @@ public abstract class GitHubReaderActivity<T extends Presenter> extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPresenter = getNeededPresenter();
-        mPresenter.subscribe(this);
-        mIsDestroyed = false;
         initUI();
         setUI(savedInstanceState);
+        mPresenter = getNeededPresenter();
+        mPresenter.subscribe(this);
+        mPresenter.restoreData();
+        mIsDestroyed = false;
         mSpinnerDialog = new ProgressDialog(this);
         mSpinnerDialog.setMessage(getString(R.string.login_activity_login_in_process));
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if (mPresenter.isSubscribed(this)) {
+            mPresenter.saveData();
+        }
     }
 
     @Override

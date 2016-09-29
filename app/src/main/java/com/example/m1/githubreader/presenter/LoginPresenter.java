@@ -8,17 +8,15 @@ import com.example.m1.githubreader.R;
 import com.example.m1.githubreader.app.GitHubReaderApp;
 import com.example.m1.githubreader.model.api.APIHelper;
 import com.example.m1.githubreader.model.data.GitHubUser;
-import com.example.m1.githubreader.presenter.enums.ReposType;
 import com.example.m1.githubreader.utils.Base64EncodeDecodeHelper;
 import com.example.m1.githubreader.utils.UserCredManager;
-import com.example.m1.githubreader.view.activities.ReposActivity;
+import com.example.m1.githubreader.view.activities.MyReposActivity;
 import com.example.m1.githubreader.view.interfaces.LoginView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.example.m1.githubreader.app.Constants.ARG_REPOS_TYPE;
 import static com.example.m1.githubreader.app.Constants.CODE_LIMIT;
 import static com.example.m1.githubreader.app.Constants.CODE_OK;
 import static com.example.m1.githubreader.app.Constants.CODE_UNAUTHORIZED;
@@ -59,9 +57,8 @@ public final class LoginPresenter extends BasePresenter<LoginView> implements Ca
     public void onResponse(Call<GitHubUser> call, Response<GitHubUser> response) {
         view.hideProgressDialog();
         if (response.code() == CODE_OK) {
-            Intent intent = new Intent(GitHubReaderApp.getAppContext(), ReposActivity.class);
+            Intent intent = new Intent(GitHubReaderApp.getAppContext(), MyReposActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.putExtra(ARG_REPOS_TYPE, ReposType.MY);
             GitHubReaderApp.getAppContext().startActivity(intent);
             PresenterManager.removePresenter(this);
             view = null;
@@ -97,8 +94,4 @@ public final class LoginPresenter extends BasePresenter<LoginView> implements Ca
         view.setPassword(mPassData);
     }
 
-    @Override
-    public boolean isSubscribed(LoginView view) {
-        return view.equals(this.view);
-    }
 }

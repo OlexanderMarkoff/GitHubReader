@@ -33,20 +33,7 @@ public class LoginActivity extends GitHubReaderActivity<LoginPresenter> implemen
 
     @Override
     protected void setUI(Bundle savedInstanceState) {
-        if (mPresenter.isSubscribed(this)) {
-            mPresenter.restoreData();
-        }
-        mEdtLogin.setText("ddrecass@gmail.com");
-        mEdtPassword.setText("MaSSaF_1");
         mBtnLogin.setOnClickListener(this);
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        if (mPresenter.isSubscribed(this)) {
-            mPresenter.saveData();
-        }
     }
 
     @Override
